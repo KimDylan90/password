@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modales Dialogfenster</title>
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Modales Dialogfenster</h1>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h2>Willkommen!</h2>
+      <p>Dies ist das Modalfenster.</p>
+    </div>
+  </div>
+
+  <script>
+    // Funktion zum Anzeigen des Modalfensters
+    function showModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    // Funktion zum Verzögern des Aufrufs der showModal-Funktion
+    function delayModal() {
+      setTimeout(showModal, 3000); // 3000 Millisekunden = 3 Sekunden
+    }
+
+    // Verzögertes Aufrufen der delayModal-Funktion beim Laden der Seite
+    window.onload = delayModal;
+  </script>
+</body>
+</html>

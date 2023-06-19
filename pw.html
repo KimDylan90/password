@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login-Formular mit Passwortanzeige</title>
+  <style>
+    .form-group {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login-Formular</h1>
+
+  <div class="form-group">
+    <label for="username">Benutzername:</label>
+    <input type="text" id="username" name="username">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Passwort:</label>
+    <input type="password" id="password" name="password">
+    <input type="checkbox" id="togglePassword">
+    <label for="togglePassword">Passwort anzeigen</label>
+  </div>
+
+  <button type="submit">Anmelden</button>
+
+  <script>
+    const togglePassword = document.getElementById("togglePassword");
+    const password = document.getElementById("password");
+
+    togglePassword.addEventListener("change", function () {
+      if (togglePassword.checked) {
+        password.setAttribute("type", "text");
+      } else {
+        password.setAttribute("type", "password");
+      }
+    });
+  </script>
+</body>
+</html>
